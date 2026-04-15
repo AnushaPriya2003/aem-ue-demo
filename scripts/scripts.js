@@ -81,6 +81,7 @@ export function decorateMain(main) {
   main.setAttribute('data-aue-resource', `urn:aemconnection:${path}/jcr:content/root`);
   main.setAttribute('data-aue-type', 'container');
   main.setAttribute('data-aue-label', 'Main Content');
+  main.setAttribute('data-aue-filter', 'main');
 
   // hopefully forward compatible button decoration
   decorateButtons(main);
@@ -88,6 +89,15 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+
+  // Instrument sections for Universal Editor
+  main.querySelectorAll(':scope > .section').forEach((section, i) => {
+    section.setAttribute('data-aue-resource', `urn:aemconnection:${path}/jcr:content/root/section_${i}`);
+    section.setAttribute('data-aue-type', 'container');
+    section.setAttribute('data-aue-model', 'section');
+    section.setAttribute('data-aue-filter', 'section');
+    section.setAttribute('data-aue-label', `Section ${i + 1}`);
+  });
 }
 
 /**

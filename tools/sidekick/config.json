@@ -1,5 +1,5 @@
 {
-  "project": "AEM XWalk Boilerplate",
-  "editUrlLabel": "AEM Editor",
-  "editUrlPattern": "{{contentSourceUrl}}{{pathname}}?cmd=open"
+  "project": "AEM UE Demo",
+  "editUrlLabel": "Edit in Universal Editor",
+  "editUrlPattern": "https://experience.adobe.com/#/aem/editor{{pathname}}?ref=main&repo=aem-ue-demo&owner=AnushaPriya2003"
 }
